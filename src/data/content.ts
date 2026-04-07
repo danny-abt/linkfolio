@@ -1,13 +1,18 @@
 export const personalInfo = {
   name: "Danny Emmanuel Aboutou",
   title: "Software Engineering Student",
-  bio: "Étudiant en génie logiciel à l'Université Laval, passionné par le développement web, les systèmes distribués et la création de solutions logicielles élégantes.",
+  bio: "Étudiant en génie logiciel à l'Université Laval. Je construis des projets réels et déployés — je livre vite en maîtrisant les bons outils.",
   email: "danny-emmanuel.aboutou.1@ulaval.ca",
   github: "https://github.com/danny-abt",
   university: "Université Laval",
   program: "Baccalauréat en génie logiciel",
   graduationYear: 2027,
 };
+
+export const aboutStats = [
+  { value: "2", label: "Projets déployés" },
+  { value: "4+", label: "Projets académiques" },
+];
 
 export const navLinks = [
   { label: "Accueil", href: "#hero" },
@@ -56,9 +61,9 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Git/GitHub", icon: "🔀" },
       { name: "Docker", icon: "🐳" },
+      { name: "CI/CD", icon: "⚡" },
       { name: "MySQL", icon: "🗄" },
       { name: "MongoDB", icon: "🍃" },
-      { name: "VS Code", icon: "📝" },
       { name: "Linux", icon: "🐧" },
     ],
   },
@@ -79,11 +84,12 @@ export const projects: Project[] = [
       "Portfolio personnel moderne construit avec Next.js, TypeScript et Tailwind CSS. Design dark premium avec animations fluides.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/danny-abt/linkfolio",
+    live: "https://linkfolio-dea.vercel.app",
   },
   {
     title: "DocuChat",
     description:
-      "Application web permettant d'uploader un PDF et de poser des questions sur son contenu via une interface conversationnelle.",
+      "Application web permettant d'uploader un PDF et de poser des questions sur son contenu via une interface conversationnelle, propulsée par Claude AI.",
     tags: ["Next.js", "Claude AI", "TypeScript", "Tailwind CSS"],
     live: "https://docuchat-dea.vercel.app",
   },
@@ -100,7 +106,7 @@ export interface Experience {
   organization: string;
   period: string;
   description: string;
-  type: "academic" | "professional";
+  type: "academic" | "professional" | "certification";
 }
 
 export const experiences: Experience[] = [
@@ -109,7 +115,23 @@ export const experiences: Experience[] = [
     organization: "Université Laval",
     period: "2023 — 2027 (en cours)",
     description:
-      "Formation approfondie en conception logicielle, algorithmes, systèmes d'exploitation, bases de données et génie logiciel appliqué.",
+      "Sécurité informatique, gestion de projets, interface personne-machine, programmation avancée.",
     type: "academic",
+  },
+  {
+    title: "Développement d'API REST",
+    organization: "Université Laval — Processus du génie logiciel",
+    period: "Hiver 2026 (en cours)",
+    description:
+      "Architecture en couches, pipeline CI/CD (GitHub Actions), conteneurisation Docker, déploiement GHCR. Méthode Agile en équipe.",
+    type: "academic",
+  },
+  {
+    title: "Formation en apprentissage automatique",
+    organization: "Université Laval — Plateforme PAX",
+    period: "2025",
+    description:
+      "Introduction au machine learning : préparation des données, régression, classification, visualisation avec Python.",
+    type: "certification",
   },
 ];
