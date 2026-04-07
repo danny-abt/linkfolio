@@ -81,10 +81,11 @@ export const projects: Project[] = [
     github: "https://github.com/danny-abt/linkfolio",
   },
   {
-    title: "Projet à venir",
+    title: "DocuChat",
     description:
-      "Un nouveau projet est en cours de développement. Restez à l'affût !",
-    tags: ["Coming Soon"],
+      "Application web permettant d'uploader un PDF et de poser des questions sur son contenu via une interface conversationnelle.",
+    tags: ["Next.js", "Claude AI", "TypeScript", "Tailwind CSS"],
+    live: "https://docuchat-dea.vercel.app",
   },
   {
     title: "Projet à venir",
