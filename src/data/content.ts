@@ -11,7 +11,6 @@ export const personalInfo = {
 
 export const aboutStats = [
   { value: "2", label: "Projets déployés" },
-  { value: "4+", label: "Projets académiques" },
 ];
 
 export const navLinks = [
@@ -26,6 +25,7 @@ export interface Skill {
   name: string;
   icon: string;
 }
+
 
 export interface SkillCategory {
   title: string;
@@ -89,7 +89,7 @@ export const projects: Project[] = [
   {
     title: "DocuChat",
     description:
-      "Application web permettant d'uploader un PDF et de poser des questions sur son contenu via une interface conversationnelle, propulsée par Claude AI.",
+      "Application web permettant d'uploader un PDF et de poser des questions sur son contenu via une interface conversationnelle.",
     tags: ["Next.js", "Claude AI", "TypeScript", "Tailwind CSS"],
     live: "https://docuchat-dea.vercel.app",
   },
@@ -119,19 +119,26 @@ export const experiences: Experience[] = [
     type: "academic",
   },
   {
+    title: "Formation en apprentissage automatique",
+    organization: "Université Laval — Plateforme PAX",
+    period: "2025",
+    description:
+      "Préparation et nettoyage de données, régression, classification. Traitement de données textuelles (ML & deep learning), traitement et analyse d'images, extraction et génération de contenu d'image à l'aide de l'apprentissage profond.",
+    type: "certification",
+  },
+  {
+    title: "Responsive Web Design Certification",
+    organization: "freeCodeCamp",
+    period: "2020",
+    description: "Certification en design web responsive — HTML, CSS.",
+    type: "certification",
+  },
+    {
     title: "Développement d'API REST",
     organization: "Université Laval — Processus du génie logiciel",
     period: "Hiver 2026 (en cours)",
     description:
       "Architecture en couches, pipeline CI/CD (GitHub Actions), conteneurisation Docker, déploiement GHCR. Méthode Agile en équipe.",
     type: "academic",
-  },
-  {
-    title: "Formation en apprentissage automatique",
-    organization: "Université Laval — Plateforme PAX",
-    period: "2025",
-    description:
-      "Introduction au machine learning : préparation des données, régression, classification, visualisation avec Python.",
-    type: "certification",
   },
 ];

@@ -67,7 +67,7 @@ export default function Navbar() {
           onClick={(e) => handleClick(e, "#hero")}
           className="text-lg font-bold tracking-tight text-accent-light hover:text-accent transition-colors"
         >
-          {"<LinkFolio />"}
+          {"LinkFolio"}
         </a>
 
         {/* Desktop */}

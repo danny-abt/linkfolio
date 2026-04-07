@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { aboutStats, aboutDescription } from "@/data/content";
+import { aboutStats } from "@/data/content";
 
 export default function About() {
   return (
@@ -12,7 +12,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="grid md:grid-cols-3 gap-6 mb-10"
+          className="flex justify-center gap-6 mb-10"
         >
           {aboutStats.map((stat, i) => (
             <motion.div
@@ -21,7 +21,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-card border border-card-border rounded-2xl p-6 text-center"
+              className="bg-card border border-card-border rounded-2xl p-6 text-center w-48"
             >
               <div className="text-4xl font-bold text-accent-light mb-1">
                 {stat.value}
@@ -38,7 +38,6 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-muted text-center text-lg leading-relaxed max-w-2xl mx-auto"
         >
-          {aboutDescription}
         </motion.p>
       </div>
     </section>
