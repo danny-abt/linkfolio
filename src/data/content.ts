@@ -96,7 +96,7 @@ export const projects: Project[] = [
   {
     title: "Projet à venir",
     description:
-      "Un nouveau projet est en cours de développement. Restez à l'affût !",
+      "Un nouveau projet est en cours de développement. Il s'agit d'une application de gestion de tâches déployée sur AWS avec Docker et CI/CD",
     tags: ["Coming Soon"],
   },
 ];

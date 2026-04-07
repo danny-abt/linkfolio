@@ -26,7 +26,7 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Parcours</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Expérience</h2>
           <p className="text-muted max-w-lg mx-auto">
             Mon parcours académique, projets et formations.
           </p>
