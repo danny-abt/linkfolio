@@ -18,4 +18,4 @@ npm run dev
 
 ## Déploiement
 
-Déployé sur [Vercel](https://vercel.com) — push sur `main` déclenche un déploiement automatique.
+Déployé sur [Vercel](https://vercel.com)
