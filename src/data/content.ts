@@ -94,10 +94,10 @@ export const projects: Project[] = [
     live: "https://docuchat-dea.vercel.app",
   },
   {
-    title: "Projet à venir",
+    title: "Force du Nombre S.E.C.",
     description:
-      "Un nouveau projet est en cours de développement. Il s'agit d'une application de gestion de tâches déployée sur AWS avec Docker et CI/CD",
-    tags: ["Coming Soon"],
+      "Application web de gestion de membres et de cotisations pour un club d'investissement. Suivi des reçus, des versements, et des objectifs financiers par membre.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
   },
 ];
 
