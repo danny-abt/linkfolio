@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Danny Emmanuel Aboutou",
   title: "Software Engineering Student",
-  bio: "Étudiant en génie logiciel à l'Université Laval. Je construis des projets réels et déployés — je livre vite en maîtrisant les bons outils.",
+  bio: "Étudiant en génie logiciel à l'Université Laval. Je construis des projets réels et déployés — je livre vite en maîtrisant les bons outils. Je travaille en Agile avec des livrables concrets, en appliquant les bonnes pratiques : architecture solide, clean code, tests, sécurité et documentation.",
   email: "danny-emmanuel.aboutou.1@ulaval.ca",
   github: "https://github.com/danny-abt",
   university: "Université Laval",
@@ -65,6 +65,18 @@ export const skillCategories: SkillCategory[] = [
       { name: "MySQL", icon: "🗄" },
       { name: "MongoDB", icon: "🍃" },
       { name: "Linux", icon: "🐧" },
+    ],
+  },
+  {
+    title: "Pratiques & Méthodologie",
+    skills: [
+      { name: "Clean Code", icon: "✦" },
+      { name: "Tests unitaires", icon: "✓" },
+      { name: "Sécurité", icon: "🔒" },
+      { name: "Documentation", icon: "📄" },
+      { name: "Architecture", icon: "⬡" },
+      { name: "Agile / Scrum", icon: "🔄" },
+      { name: "Livrables client", icon: "📦" },
     ],
   },
 ];
