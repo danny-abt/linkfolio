@@ -139,16 +139,16 @@ export const experiences: Experience[] = [
     type: "certification",
   },
   {
-    title: "Responsive Web Design Certification",
-    organization: "freeCodeCamp",
-    period: "2020",
-    description: "Certification en design web responsive — HTML, CSS.",
-    type: "certification",
+    title: "Développement d'un logiciel de gestion d'un club d'investissement",
+    organization: "Force du Nombre S.E.C",
+    period: "Avril2026",
+    description: "Conception d’une architecture logicielle maintenable avec déploiement CI/CD, tests automatisés (unitaires, intégration, persistance, E2E), analyse statique du code et sécurisation avancée via headers HTTP et rotation de tokens de session.",
+    type: "professional",
   },
     {
     title: "Développement d'API REST",
     organization: "Université Laval — Processus du génie logiciel",
-    period: "Hiver 2026 (en cours)",
+    period: "Hiver 2026",
     description:
       "Architecture en couches, pipeline CI/CD (GitHub Actions), conteneurisation Docker, déploiement GHCR. Méthode Agile en équipe.",
     type: "academic",
