@@ -279,14 +279,8 @@ export const services: Service[] = [
   {
     title: "Développement Full-Stack",
     description:
-      "Conception et développement d'applications web complètes, du front-end au back-end, avec une stack moderne et typée.",
-    tools: ["Next.js", "TypeScript", "Node.js", "Prisma ORM", "PostgreSQL"],
-  },
-  {
-    title: "Front-End",
-    description:
-      "Interfaces réactives, accessibles et performantes. Design system, composants réutilisables et expérience utilisateur soignée.",
-    tools: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+      "Conception et développement d'applications web complètes — interfaces réactives, API robustes, base de données, déploiement. Du wireframe au produit en production.",
+    tools: ["Next.js", "React", "TypeScript", "Node.js", "Prisma ORM", "PostgreSQL", "Tailwind CSS", "Framer Motion"],
   },
   {
     title: "Back-End & API",
@@ -305,6 +299,12 @@ export const services: Service[] = [
     description:
       "Clean code, architecture solide (MVC, couches), tests automatisés, documentation technique et revue de code.",
     tools: ["Python", "Java", "C/C++", "Swing", "JUnit", "Flask", "TDD", "ESLint"],
+  },
+  {
+    title: "Programmation orientée objet",
+    description:
+      "Conception orientée objet, design patterns, architecture MVC, modélisation et développement de logiciels robustes et maintenables.",
+    tools: ["Java", "C/C++", "Python", "Swing", "JUnit", "UML"],
   },
   {
     title: "Sécurité applicative",
