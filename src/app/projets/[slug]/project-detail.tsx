@@ -143,7 +143,7 @@ export function ProjectDetail({ project }: { project: Project }) {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, ease: EASE }}
             className="mt-10 rounded-xl bg-[var(--surface)] px-8 py-9"
-            style={{ border: "1px solid var(--brand-blue-mid)", borderOpacity: 0.3 }}
+            style={{ border: "1px solid var(--brand-blue-mid)" }}
           >
             <div className="grid gap-10 md:grid-cols-[1.6fr_1fr_1fr_1fr] md:items-start">
               <div>
