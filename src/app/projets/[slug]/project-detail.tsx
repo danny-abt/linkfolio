@@ -18,7 +18,21 @@ export function ProjectDetail({ project }: { project: Project }) {
         }));
 
   return (
-    <section className="relative mx-auto max-w-[1400px] px-6 md:px-12 py-20 md:py-36">
+    <section className="relative overflow-hidden">
+      {/* Image ambiante droite */}
+      <div className="absolute right-0 inset-y-0 w-1/2 pointer-events-none select-none">
+        <Image
+          src="/hero.png"
+          alt=""
+          fill
+          sizes="50vw"
+          className="object-cover object-right opacity-100"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_40%,var(--background)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,transparent_40%,transparent_85%,var(--background)_100%)]" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1400px] px-6 md:px-12 py-20 md:py-36">
       <motion.div
         initial={{ opacity: 0, x: -8 }}
         animate={{ opacity: 1, x: 0 }}
@@ -171,9 +185,11 @@ export function ProjectDetail({ project }: { project: Project }) {
           )}
         </motion.div>
       </div>
+      </div>
     </section>
   );
 }
+
 
 function Meta({ label, value }: { label: string; value: string }) {
   return (
