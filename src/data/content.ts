@@ -29,6 +29,7 @@ export interface Project {
   github?: string;
   live?: string;
   challenge: string;
+  challengeLabel?: string | null;
   stats: { value: string; label: string }[];
   cover?: string;
   video?: string;
@@ -87,11 +88,8 @@ export const projects: Project[] = [
     github: "",
     challenge:
       "Remplacer un système Excel manuel par une plateforme web moderne, sécurisée et maintenable, sans perte de données ni rupture pour les utilisateurs existants.",
-    stats: [
-      { value: "7", label: "Modules développés (auth, membres, cotisations, reçus…)" },
-      { value: "5", label: "Types de tests automatisés (unit., intégr., persistance, E2E, lint)" },
-      { value: "3", label: "Couches d'architecture (présentation / domaine / persistance)" },
-    ],
+    challengeLabel: "Mandat",
+    stats: [],
     cover: "/projects/sec/SEC-home-page.jpg",
     thumbnails: [
       "/projects/sec/SEC-auth.png",
@@ -136,6 +134,7 @@ export const projects: Project[] = [
     github: "",
     challenge:
       "Créer une expérience d'achat en ligne centrée sur la découverte, où l'utilisateur peut facilement trouver, explorer et précommander des livres avant leur parution.",
+    challengeLabel: null,
     stats: [
       { value: "4", label: "Sections principales (accueil, à paraître, catégories, à propos)" },
       { value: "SSR", label: "Rendu serveur pour SEO et performance" },
@@ -175,6 +174,7 @@ export const projects: Project[] = [
     github: "",
     challenge:
       "Rendre l'interrogation d'un document long aussi simple que poser une question, tout en couvrant rigoureusement les cas d'erreur réels rencontrés en production.",
+    challengeLabel: null,
     stats: [
       { value: "API", label: "Claude Sonnet — Anthropic" },
       { value: "6+", label: "Cas d'erreur gérés explicitement" },

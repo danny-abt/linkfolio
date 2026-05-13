@@ -136,37 +136,39 @@ export function ProjectDetail({ project }: { project: Project }) {
             thumbnails={thumbnails}
           />
 
-          {/* Stats / Défi */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease: EASE }}
-            className="mt-10 rounded-xl bg-[var(--surface)] px-8 py-9"
-            style={{ border: "1px solid var(--brand-blue-mid)" }}
-          >
-            <div className="grid gap-10 md:grid-cols-[1.6fr_1fr_1fr_1fr] md:items-start">
-              <div>
-                <div className="flex items-center gap-2.5 mb-3" style={{ color: "var(--brand-blue)" }}>
-                  <QuoteIcon />
-                  <p className="text-base font-medium">Le défi</p>
+          {/* Stats / Défi — masqué si challengeLabel === null */}
+          {project.challengeLabel !== null && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, ease: EASE }}
+              className="mt-10 rounded-xl bg-[var(--surface)] px-8 py-9"
+              style={{ border: "1px solid var(--brand-blue-mid)" }}
+            >
+              <div className={`grid gap-10 md:items-start ${project.stats.length > 0 ? "md:grid-cols-[1.6fr_1fr_1fr_1fr]" : ""}`}>
+                <div>
+                  <div className="flex items-center gap-2.5 mb-3" style={{ color: "var(--brand-blue)" }}>
+                    <QuoteIcon />
+                    <p className="text-base font-medium">{project.challengeLabel ?? "Le défi"}</p>
+                  </div>
+                  <p className="text-sm text-[var(--muted-strong)] leading-relaxed max-w-md">
+                    {project.challenge}
+                  </p>
                 </div>
-                <p className="text-sm text-[var(--muted-strong)] leading-relaxed max-w-md">
-                  {project.challenge}
-                </p>
+                {project.stats.map((s) => (
+                  <div key={s.label}>
+                    <p className="text-3xl md:text-4xl font-medium tracking-tight tabular-nums" style={{ color: "var(--brand-blue)" }}>
+                      {s.value}
+                    </p>
+                    <p className="mt-2 text-[13px] text-[var(--muted-strong)] leading-snug">
+                      {s.label}
+                    </p>
+                  </div>
+                ))}
               </div>
-              {project.stats.map((s) => (
-                <div key={s.label}>
-                  <p className="text-3xl md:text-4xl font-medium tracking-tight tabular-nums" style={{ color: "var(--brand-blue)" }}>
-                    {s.value}
-                  </p>
-                  <p className="mt-2 text-[13px] text-[var(--muted-strong)] leading-snug">
-                    {s.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </section>
