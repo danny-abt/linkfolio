@@ -18,10 +18,10 @@ export function ExperienceSection({ compact = false }: { compact?: boolean }) {
           alt=""
           fill
           sizes="50vw"
-          className="object-cover object-right opacity-[0.38]"
+          className="object-cover object-right opacity-100"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_50%,var(--background)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,var(--background)_35%,transparent_55%,transparent_80%,var(--background)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_40%,var(--background)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,transparent_40%,transparent_85%,var(--background)_100%)]" />
       </div>
 
       <div className="relative mx-auto max-w-[1200px] px-6 md:px-12 py-32 md:py-48">
