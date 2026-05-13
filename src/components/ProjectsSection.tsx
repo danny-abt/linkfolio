@@ -18,7 +18,7 @@ export function ProjectsSection() {
           alt=""
           fill
           sizes="50vw"
-          className="object-cover object-right opacity-[0.38]"
+          className="object-cover object-right opacity-[0.6]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_50%,var(--background)_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,var(--background)_35%,transparent_55%,transparent_80%,var(--background)_100%)]" />

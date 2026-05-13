@@ -18,7 +18,7 @@ export function HeroSection() {
         className="absolute inset-0 -z-0"
         style={{
           backgroundImage: "url('/laptop.jpg')",
-          backgroundSize: "72%",
+          backgroundSize: "64%",
           backgroundPosition: "center right",
           backgroundRepeat: "no-repeat",
         }}

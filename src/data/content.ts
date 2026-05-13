@@ -210,7 +210,47 @@ export const experiences: Experience[] = [
     organization: "Université Laval",
     period: "2023 — 2027 (en cours)",
     description:
-      "Formation approfondie en génie logiciel couvrant la sécurité informatique, la gestion de projets, l'interface homme-machine (IHM) et la programmation avancée.",
+      "Formation approfondie en génie logiciel couvrant la sécurité informatique, la gestion de projets, l'interface homme-machine et la programmation avancée.",
+    type: "academic",
+  },
+  {
+    title: "Développement Full-Stack — Force du Nombre S.E.C.",
+    organization: "Mandat freelance",
+    period: "Avril 2026",
+    description:
+      "Conception et développement d'un progiciel web privé de gestion financière : architecture en couches, JWT + RBAC, pipeline CI/CD (GitHub Actions), tests unitaires/intégration/E2E, sécurité HTTP, génération de reçus PDF.",
+    type: "professional",
+  },
+  {
+    title: "Développement Backend — API REST",
+    organization: "Université Laval — Processus du génie logiciel",
+    period: "Hiver 2026",
+    description:
+      "API REST pour plateforme de vente anonyme en équipe Agile : architecture en couches, Clean Code, CI/CD GitHub Actions, conteneurisation Docker, déploiement GHCR, analyse de sécurité Snyk/Dependabot. Base de données : MongoDB.",
+    type: "academic",
+  },
+  {
+    title: "Développement logiciel — Logiciel de modélisation",
+    organization: "Université Laval — Génie logiciel orienté objet",
+    period: "Automne 2025",
+    description:
+      "Logiciel Java/Swing de modélisation d'installation de plancher chauffant : architecture MVC, moteur de graphe générant automatiquement un chemin en serpentin valide selon des contraintes physiques réelles.",
+    type: "academic",
+  },
+  {
+    title: "Développement Web — Application de gestion",
+    organization: "Université Laval — Modèles et langages des bases de données",
+    period: "Hiver 2025",
+    description:
+      "Application web Flask/MySQL pour automatiser la gestion d'un cabinet de conseil : hachage bcrypt, prévention injections SQL, sessions sécurisées, base de données relationnelle avec procédures stockées et triggers.",
+    type: "academic",
+  },
+  {
+    title: "Développement logiciel — Logiciel de gestion électorale",
+    organization: "Université Laval — Programmation avancée C++",
+    period: "Hiver 2024",
+    description:
+      "Logiciel de gestion électorale en C++ avec interface graphique (UI).",
     type: "academic",
   },
   {
@@ -218,7 +258,7 @@ export const experiences: Experience[] = [
     organization: "Université Laval — Plateforme PAX",
     period: "2025",
     description:
-      "Préparation et nettoyage des données, régression, classification, traitement de données textuelles (ML & deep learning), traitement et analyse d'images, extraction et génération de contenu d'image.",
+      "Préparation et nettoyage des données, régression, classification, traitement de données textuelles (ML & deep learning), traitement et analyse d'images, extraction et génération de contenu.",
     type: "certification",
   },
 ];
@@ -227,4 +267,49 @@ export const competences = [
   "Sécurité, Architecture logicielle",
   "CI/CD, Automatisation métier",
   "Next.js, TypeScript, Prisma ORM, PostgreSQL, Tailwind CSS",
+];
+
+export interface Service {
+  title: string;
+  description: string;
+  tools: string[];
+}
+
+export const services: Service[] = [
+  {
+    title: "Développement Full-Stack",
+    description:
+      "Conception et développement d'applications web complètes, du front-end au back-end, avec une stack moderne et typée.",
+    tools: ["Next.js", "TypeScript", "Node.js", "Prisma ORM", "PostgreSQL"],
+  },
+  {
+    title: "Front-End",
+    description:
+      "Interfaces réactives, accessibles et performantes. Design system, composants réutilisables et expérience utilisateur soignée.",
+    tools: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    title: "Back-End & API",
+    description:
+      "Architecture en couches, API REST robustes, authentification sécurisée (JWT, RBAC), gestion des sessions et validation côté serveur.",
+    tools: ["Node.js", "Express", "Prisma ORM", "PostgreSQL", "MySQL", "MongoDB"],
+  },
+  {
+    title: "CI/CD & DevOps",
+    description:
+      "Pipeline d'intégration et de déploiement continu couvrant tests automatisés, analyse statique, conteneurisation et déploiement cloud.",
+    tools: ["GitHub Actions", "Docker", "Vercel", "Azure", "Google Cloud", "Neon", "Supabase"],
+  },
+  {
+    title: "Développement logiciel",
+    description:
+      "Clean code, architecture solide (MVC, couches), tests automatisés, documentation technique et revue de code.",
+    tools: ["Python", "Java", "C/C++", "Swing", "JUnit", "Flask", "TDD", "ESLint"],
+  },
+  {
+    title: "Sécurité applicative",
+    description:
+      "Sécurisation des applications web : authentification, protection des données, analyse de vulnérabilités et durcissement des headers HTTP.",
+    tools: ["JWT", "bcrypt", "RBAC", "Snyk", "Dependabot", "Headers HTTP"],
+  },
 ];

@@ -36,6 +36,9 @@ export function ExperienceSection({ compact = false }: { compact?: boolean }) {
           <h2 className="text-5xl md:text-6xl font-semibold tracking-tight text-white mb-5">
             Parcours
           </h2>
+          <p className="text-[var(--muted-strong)] max-w-xl mx-auto text-sm leading-relaxed">
+            Formation académique, projets professionnels et certifications — du génie logiciel orienté objet à la sécurité applicative.
+          </p>
         </motion.div>
 
         <div className="relative">
