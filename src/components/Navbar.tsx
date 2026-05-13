@@ -1,149 +1,70 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { navLinks } from "@/data/content";
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("#hero");
+const links = [
+  { href: "/", label: "Accueil" },
+  { href: "/projets", label: "Projets" },
+  { href: "/experiences", label: "Expériences" },
+  { href: "/contact", label: "Contact" },
+];
 
-  useEffect(() => {
-    let ticking = false;
+export function Navbar() {
+  const pathname = usePathname();
 
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-
-      requestAnimationFrame(() => {
-        setScrolled(window.scrollY > 50);
-
-        const scrollPos = window.scrollY + 120;
-        for (let i = navLinks.length - 1; i >= 0; i--) {
-          const section = document.querySelector(navLinks[i].href);
-          if (section && (section as HTMLElement).offsetTop <= scrollPos) {
-            setActiveSection(navLinks[i].href);
-            break;
-          }
-        }
-
-        ticking = false;
-      });
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const handleClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        const top =
-          (target as HTMLElement).offsetTop - 70;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
-      setMobileOpen(false);
-    },
-    []
-  );
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-card-border"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
-        <a
-          href="#hero"
-          onClick={(e) => handleClick(e, "#hero")}
-          className="text-lg font-bold tracking-tight text-accent-light hover:text-accent transition-colors"
+    <header className="sticky top-0 z-50 bg-[color-mix(in_srgb,var(--background)_75%,transparent)] backdrop-blur-xl border-b border-[var(--line)]">
+      <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-6 md:px-12">
+        <Link
+          href="/"
+          className="text-2xl font-medium tracking-tight text-white hover:opacity-80 transition-opacity"
         >
-          {"LinkFolio"}
-        </a>
+          Portfolio<span style={{ color: "var(--brand-blue)" }}>.</span>
+        </Link>
 
-        {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
+        <nav className="hidden md:flex items-center gap-10">
+          {links.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.href}
                 href={link.href}
-                onClick={(e) => handleClick(e, link.href)}
-                className={`text-sm transition-colors ${
-                  activeSection === link.href
-                    ? "text-accent-light"
-                    : "text-muted hover:text-foreground"
+                className={`relative text-sm transition-colors duration-300 ${
+                  active ? "text-white" : "text-[var(--muted-strong)] hover:text-white"
                 }`}
               >
                 {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+                {active && (
+                  <motion.span
+                    layoutId="nav-underline"
+                    className="absolute -bottom-1.5 left-0 right-0 h-px bg-white"
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                )}
+              </Link>
+            );
+          })}
+        </nav>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-muted hover:text-foreground"
-          aria-label="Toggle menu"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            {mobileOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
+        <Link href="/contact" className="btn-secondary">
+          Me contacter
+          <ArrowUpRight />
+        </Link>
       </div>
+    </header>
+  );
+}
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <motion.ul
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-md border-b border-card-border px-6 pb-4 flex flex-col gap-4"
-        >
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={(e) => handleClick(e, link.href)}
-                className={`text-sm transition-colors ${
-                  activeSection === link.href
-                    ? "text-accent-light"
-                    : "text-muted hover:text-foreground"
-                }`}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </motion.ul>
-      )}
-    </motion.nav>
+function ArrowUpRight() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
+    </svg>
   );
 }

@@ -1,27 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playfair = Playfair_Display({
   subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-display",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Danny Emmanuel Aboutou | Software Engineer",
   description:
-    "Portfolio de Danny Emmanuel Aboutou — étudiant en génie logiciel à l'Université Laval. Projets, compétences et expériences.",
+    "Portfolio de Danny Emmanuel Aboutou — étudiant en génie logiciel à l'Université Laval. Projets, expériences et contact.",
   keywords: [
     "Danny Emmanuel Aboutou",
     "software engineer",
     "portfolio",
     "Université Laval",
     "génie logiciel",
+    "LinkFolio",
   ],
   openGraph: {
     title: "Danny Emmanuel Aboutou | Software Engineer",
@@ -33,13 +39,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Danny Emmanuel Aboutou | Software Engineer",
-    description:
-      "Portfolio de Danny Emmanuel Aboutou — étudiant en génie logiciel à l'Université Laval.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -50,9 +51,13 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${inter.variable} ${playfair.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
