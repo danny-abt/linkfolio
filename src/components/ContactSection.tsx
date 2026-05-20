@@ -37,13 +37,13 @@ export function ContactSection() {
   return (
     <section id="contact" className="border-t border-[var(--line)] relative overflow-hidden">
       {/* Image ambiante droite — identique à Expérience */}
-      <div className="absolute right-0 inset-y-0 w-1/2 pointer-events-none select-none">
+      <div className="absolute inset-0 pointer-events-none select-none">
         <Image
           src="/hero.png"
           alt=""
           fill
-          sizes="50vw"
-          className="object-cover object-right opacity-100"
+          sizes="100vw"
+          className="object-cover object-center opacity-100"
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_40%,var(--background)_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,transparent_40%,transparent_85%,var(--background)_100%)]" />

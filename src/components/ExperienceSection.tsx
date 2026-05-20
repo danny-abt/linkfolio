@@ -12,13 +12,13 @@ export function ExperienceSection({ compact = false }: { compact?: boolean }) {
   return (
     <section id="experiences" className="border-t border-[var(--line)] relative overflow-hidden">
       {/* Image ambiante droite */}
-      <div className="absolute right-0 inset-y-0 w-1/2 pointer-events-none select-none">
+      <div className="absolute inset-0 pointer-events-none select-none">
         <Image
           src="/hero.png"
           alt=""
           fill
-          sizes="50vw"
-          className="object-cover object-right opacity-100"
+          sizes="100vw"
+          className="object-cover object-center opacity-100"
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_40%,var(--background)_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,transparent_40%,transparent_85%,var(--background)_100%)]" />
@@ -45,7 +45,7 @@ export function ExperienceSection({ compact = false }: { compact?: boolean }) {
           {/* Ligne verticale — bleu identité */}
           <div className="absolute left-3 top-3 bottom-3 w-px bg-[var(--brand-blue-mid)] opacity-30" />
 
-          <ol className="space-y-16">
+          <ol className="space-y-16 md:space-y-0 md:grid md:grid-cols-[1fr_1.2fr_auto] md:gap-x-10 md:gap-y-16">
             {items.map((exp, i) => (
               <motion.li
                 key={exp.title}
@@ -53,7 +53,7 @@ export function ExperienceSection({ compact = false }: { compact?: boolean }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, delay: i * 0.06, ease: EASE }}
-                className="relative pl-12 md:grid md:grid-cols-[1fr_1.2fr_auto] md:gap-x-10"
+                className="relative pl-12 md:pl-12 md:grid md:grid-cols-subgrid md:col-span-3"
               >
                 {/* Dot avec halo bleu */}
                 <span className="absolute left-0 top-3 flex h-6 w-6 items-center justify-center">

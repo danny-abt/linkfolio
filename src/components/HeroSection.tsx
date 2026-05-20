@@ -15,7 +15,7 @@ export function HeroSection() {
     <section className="relative min-h-[92vh] overflow-hidden flex flex-col">
       {/* Image de fond */}
       <div
-        className="absolute inset-0 -z-0"
+        className="absolute inset-0 -z-0 brightness-130"
         style={{
           backgroundImage: "url('/laptop.jpg')",
           backgroundSize: "64%",
