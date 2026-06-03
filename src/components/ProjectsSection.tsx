@@ -18,9 +18,10 @@ export function ProjectsSection() {
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-100"
+          className="object-cover object-center opacity-[0.53]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_40%,var(--background)_100%)]" />
+        
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,transparent_40%,transparent_85%,var(--background)_100%)]" />
       </div>
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-12 py-20 md:py-28">
@@ -29,33 +30,38 @@ export function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: EASE }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14"
+          className="mb-14 text-center"
         >
-          <div>
-            <h2 className="text-4xl md:text-6xl font-light tracking-tight text-white">
-              Projets récents
-            </h2>
-            <p className="mt-3 text-sm text-[var(--muted-strong)]">Projets professionnels et personnels.</p>
-          </div>
+          <p className="kicker mb-5" style={{ color: "var(--brand-blue)" }}>Réalisations</p>
+          <h2 className="text-4xl md:text-6xl font-light tracking-tight text-white mb-6">
+            Projets récents
+          </h2>
+          <p className="text-[var(--muted-strong)] max-w-xl mx-auto text-sm leading-relaxed">
+            Projets professionnels et personnels — du mandat freelance au projet académique.
+          </p>
         </motion.div>
 
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <motion.div
               key={project.slug}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ y: 24 }}
+              whileInView={{ y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.08, ease: EASE }}
             >
               <Link href={`/projets/${project.slug}`} className="group block">
-                <div className="overflow-hidden rounded-xl border border-[var(--line)] mb-5 transition-all duration-500 group-hover:border-[var(--line-strong)]">
+                <div
+                  className="overflow-hidden border border-[var(--line)] mb-5 transition-all duration-500 group-hover:border-[var(--line-strong)]"
+                  style={project.coverBg ? { backgroundColor: project.coverBg } : undefined}
+                >
                   <div className="transition-transform duration-700 group-hover:scale-[1.03]">
                     <MediaSlot
                       ratio="video"
                       label={project.title}
                       src={project.cover}
                       objectFit="contain"
+                      bgColor={project.coverBg}
                     />
                   </div>
                 </div>

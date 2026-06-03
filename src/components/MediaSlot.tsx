@@ -7,6 +7,7 @@ type MediaSlotProps = {
   className?: string;
   ratio?: "video" | "square" | "tall" | "wide";
   objectFit?: "cover" | "contain";
+  bgColor?: string;
 };
 
 const ratioClass: Record<NonNullable<MediaSlotProps["ratio"]>, string> = {
@@ -23,18 +24,22 @@ export function MediaSlot({
   className = "",
   ratio = "wide",
   objectFit = "contain",
+  bgColor,
 }: MediaSlotProps) {
   const wrapper = `media-placeholder rounded-xl ${ratioClass[ratio]} ${className}`;
 
   if (src) {
     return (
-      <div className={`relative overflow-hidden rounded-2xl ${ratioClass[ratio]} ${className} bg-[var(--background)]`}>
+      <div
+        className={`relative overflow-hidden ${ratioClass[ratio]} ${className}`}
+        style={{ backgroundColor: bgColor ?? "var(--background)" }}
+      >
         <Image
           src={src}
           alt={alt}
           fill
           sizes="(min-width: 1024px) 60vw, 100vw"
-          className={objectFit === "cover" ? "object-cover" : "object-contain"}
+          className={objectFit === "cover" ? "object-cover object-top" : "object-contain"}
           priority
         />
       </div>

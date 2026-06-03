@@ -43,9 +43,10 @@ export function ContactSection() {
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-100"
+          className="object-cover object-center opacity-[0.53]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_40%,var(--background)_100%)]" />
+        
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,transparent_40%,transparent_85%,var(--background)_100%)]" />
       </div>
 
@@ -60,7 +61,7 @@ export function ContactSection() {
             transition={{ duration: 0.7, ease: EASE }}
           >
             <p className="kicker mb-5" style={{ color: "var(--brand-blue)" }}>Contact</p>
-            <h2 className="text-5xl md:text-7xl font-light tracking-tight text-white mb-5">
+            <h2 className="text-4xl md:text-6xl font-light tracking-tight text-white mb-6">
               Contact
             </h2>
             <p className="text-[var(--muted-strong)] mb-10">
@@ -116,7 +117,7 @@ export function ContactSection() {
               <button
                 type="submit"
                 disabled={status === "sending" || status === "success"}
-                className="mt-9 w-full inline-flex items-center justify-center gap-3 py-4 px-6 rounded-md font-medium transition-all duration-300 hover:gap-4 active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed"
+                className="mt-9 w-full inline-flex items-center justify-center gap-3 py-4 px-6 rounded-md font-medium transition-all duration-300 hover:gap-4 active:scale-[0.99] disabled:opacity-[0.53] disabled:cursor-not-allowed"
                 style={{
                   background: "linear-gradient(135deg, var(--brand-blue-mid) 0%, #2a5c75 100%)",
                   color: "#fff",

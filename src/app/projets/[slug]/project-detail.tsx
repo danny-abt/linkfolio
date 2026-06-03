@@ -26,9 +26,10 @@ export function ProjectDetail({ project }: { project: Project }) {
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-100"
+          className="object-cover object-center opacity-[0.53]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_40%,var(--background)_100%)]" />
+        
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,transparent_40%,transparent_85%,var(--background)_100%)]" />
       </div>
 
@@ -115,25 +116,36 @@ export function ProjectDetail({ project }: { project: Project }) {
                 <GithubIcon />
               </a>
             )}
-            {!project.live && !project.github && (
-              <p className="text-xs text-[var(--muted)] italic">
-                Liens à venir
-              </p>
-            )}
           </div>
 
           {/* Méta */}
-          <div className="mt-16 pt-12 border-t border-[var(--line)] grid grid-cols-3 gap-8 text-sm">
-            <Meta label="Rôle" value={project.role} />
-            <Meta label="Durée" value={project.duration} />
-            <Meta label="Technologies" value={project.tags.join(", ")} />
+          <div className="mt-16 pt-12 border-t border-[var(--line)] grid grid-cols-3 divide-x divide-[var(--line)] text-sm">
+            <div className="pr-8">
+              <Meta label="Rôle" value={project.role} />
+            </div>
+            <div className="px-8">
+              <Meta label="Date" value={project.duration} />
+            </div>
+            <div className="pl-8">
+              <p className="kicker text-[10px] mb-3" style={{ color: "var(--brand-blue)" }}>Technologies</p>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 text-xs text-white border border-[var(--line-strong)] rounded-md"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
 
         {/* Colonne droite — médias + stats */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 24 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
           className="relative"
         >
@@ -142,42 +154,70 @@ export function ProjectDetail({ project }: { project: Project }) {
             <Image src="/hero.png" alt="" fill sizes="55vw"
               className="object-cover object-right opacity-[0.38]" />
             <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_40%,transparent_60%,var(--background)_100%)]" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,var(--background)_30%,transparent_50%,transparent_85%,var(--background)_100%)]" />
+            
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,var(--background)_30%,transparent_50%,transparent_85%,var(--background)_100%)]" />
           </div>
+          {/* Stats / Défi — masqué si challengeLabel === null */}
+          {project.challengeLabel !== null && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: EASE }}
+              className="mb-8 inline-block rounded-xl bg-[var(--surface)] px-6 py-5"
+              style={{ border: "1px solid var(--brand-blue-mid)" }}
+            >
+              <div className="flex items-center gap-2.5 mb-3" style={{ color: "var(--brand-blue)" }}>
+                <QuoteIcon />
+                <p className="text-sm font-medium">{project.challengeLabel ?? "Le défi"}</p>
+              </div>
+              <p className="text-sm text-[var(--muted-strong)] leading-relaxed max-w-sm">
+                {project.challenge}
+              </p>
+              {project.stats.length > 0 && (
+                <div className="mt-6 grid grid-cols-3 gap-6">
+                  {project.stats.map((s) => (
+                    <div key={s.label}>
+                      <p className="text-3xl font-medium tracking-tight tabular-nums" style={{ color: "var(--brand-blue)" }}>
+                        {s.value}
+                      </p>
+                      <p className="mt-1 text-[13px] text-[var(--muted-strong)] leading-snug">
+                        {s.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          )}
+
           <ProjectCarousel
             mainSrc={project.cover}
             mainLabel={`Aperçu ${project.title}`}
+            bgColor={project.coverBg}
             thumbnails={thumbnails}
           />
 
-          {/* Stats / Défi — masqué si challengeLabel === null */}
-          {project.challengeLabel !== null && (
+          {/* Impact non-technique */}
+          {project.impact && project.impact.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, ease: EASE }}
-              className="mt-10 rounded-xl bg-[var(--surface)] px-8 py-9"
-              style={{ border: "1px solid var(--brand-blue-mid)" }}
+              className="mt-10"
             >
-              <div className={`grid gap-10 md:items-start ${project.stats.length > 0 ? "md:grid-cols-[1.6fr_1fr_1fr_1fr]" : ""}`}>
-                <div>
-                  <div className="flex items-center gap-2.5 mb-3" style={{ color: "var(--brand-blue)" }}>
-                    <QuoteIcon />
-                    <p className="text-base font-medium">{project.challengeLabel ?? "Le défi"}</p>
-                  </div>
-                  <p className="text-sm text-[var(--muted-strong)] leading-relaxed max-w-md">
-                    {project.challenge}
-                  </p>
-                </div>
-                {project.stats.map((s) => (
-                  <div key={s.label}>
-                    <p className="text-3xl md:text-4xl font-medium tracking-tight tabular-nums" style={{ color: "var(--brand-blue)" }}>
-                      {s.value}
+              <p className="kicker mb-6 text-[10px]" style={{ color: "var(--brand-blue)" }}>Impact concret</p>
+              <div className="grid grid-cols-2 gap-4">
+                {project.impact.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5"
+                  >
+                    <p className="text-2xl font-semibold tracking-tight mb-1" style={{ color: "var(--brand-blue)" }}>
+                      {item.value}
                     </p>
-                    <p className="mt-2 text-[13px] text-[var(--muted-strong)] leading-snug">
-                      {s.label}
-                    </p>
+                    <p className="text-sm font-medium text-white mb-2">{item.label}</p>
+                    <p className="text-xs text-[var(--muted-strong)] leading-relaxed">{item.description}</p>
                   </div>
                 ))}
               </div>

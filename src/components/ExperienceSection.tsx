@@ -18,9 +18,10 @@ export function ExperienceSection({ compact = false }: { compact?: boolean }) {
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-100"
+          className="object-cover object-center opacity-[0.53]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_40%,var(--background)_100%)]" />
+        
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,transparent_40%,transparent_85%,var(--background)_100%)]" />
       </div>
 
@@ -33,7 +34,7 @@ export function ExperienceSection({ compact = false }: { compact?: boolean }) {
           className="text-center mb-20"
         >
           <p className="kicker mb-5" style={{ color: "var(--brand-blue)" }}>Parcours</p>
-          <h2 className="text-5xl md:text-6xl font-semibold tracking-tight text-white mb-5">
+          <h2 className="text-4xl md:text-6xl font-light tracking-tight text-white mb-6">
             Parcours
           </h2>
           <p className="text-[var(--muted-strong)] max-w-xl mx-auto text-sm leading-relaxed">
@@ -43,7 +44,7 @@ export function ExperienceSection({ compact = false }: { compact?: boolean }) {
 
         <div className="relative">
           {/* Ligne verticale — bleu identité */}
-          <div className="absolute left-3 top-3 bottom-3 w-px bg-[var(--brand-blue-mid)] opacity-30" />
+          <div className="absolute left-3 top-3 bottom-3 w-px bg-[var(--brand-blue-mid)] opacity-[0.53]" />
 
           <ol className="space-y-16 md:space-y-0 md:grid md:grid-cols-[1fr_1.2fr_auto] md:gap-x-10 md:gap-y-16">
             {items.map((exp, i) => (
@@ -57,7 +58,7 @@ export function ExperienceSection({ compact = false }: { compact?: boolean }) {
               >
                 {/* Dot avec halo bleu */}
                 <span className="absolute left-0 top-3 flex h-6 w-6 items-center justify-center">
-                  <span className="absolute h-6 w-6 rounded-full bg-[var(--background)] border border-[var(--brand-blue-mid)] opacity-60" />
+                  <span className="absolute h-6 w-6 rounded-full bg-[var(--background)] border border-[var(--brand-blue-mid)] opacity-[0.53]" />
                   <span className="relative h-1.5 w-1.5 rounded-full bg-[var(--brand-blue)]" />
                 </span>
 

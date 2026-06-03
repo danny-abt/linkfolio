@@ -1,9 +1,9 @@
 export const personalInfo = {
   name: "Danny Emmanuel Aboutou",
   firstName: "Danny",
-  title: "Étudiant en génie logiciel",
-  greeting: "Salut, je suis",
-  bio: "Je construis des projets réels et déployés — je livre vite en maîtrisant les bons outils. Je travaille en Agile avec des livrables concrets, en appliquant les bonnes pratiques : architecture solide, clean code, tests, sécurité et documentation.",
+  title: "Développeur Full-Stack",
+  greeting: "Bonjour, je suis",
+  bio: "6 ans d'expérience en développement front-end\n3 ans en back-end\nBaccalauréat en génie logiciel, Université Laval\nArchitecture solide, sécurité et bonnes pratiques",
   email: "abdanny05@gmail.com",
   emailDisplay: "abdanny05@gmail.com",
   github: "https://github.com/danny-abt",
@@ -32,8 +32,10 @@ export interface Project {
   challengeLabel?: string | null;
   stats: { value: string; label: string }[];
   cover?: string;
+  coverBg?: string;
   video?: string;
   thumbnails?: string[];
+  impact?: { value: string; label: string; description: string }[];
 }
 
 export const projects: Project[] = [
@@ -41,39 +43,39 @@ export const projects: Project[] = [
     slug: "force-du-nombre-sec",
     title: "Force du Nombre S.E.C.",
     tagline:
-      "Progiciel web privé de gestion financière et administrative pour un club d'investissement — mandat freelance.",
+      "ERP web privé de gestion financière et administrative pour un club d'investissement — mandat freelance.",
     description:
       "Conception et développement complet d'un système remplaçant les processus manuels (Excel) par une plateforme web moderne, sécurisée et maintenable.",
     features: [
       {
-        title: "Stack full-stack typé & base de données",
+        title: "Application web full-stack",
         description:
-          "Application Next.js, TypeScript, Prisma ORM et PostgreSQL — gestion des membres/investisseurs, suivi des cotisations et comptabilité complète, avec modèle de données normalisé et migrations versionnées.",
+          "Gestion complète des membres, cotisations et comptabilité du club — interface moderne, base de données relationnelle et API robuste.",
       },
       {
-        title: "Architecture en couches (présentation / domaine / persistance)",
+        title: "Architecture en couches",
         description:
-          "Séparation stricte des responsabilités garantissant la maintenabilité et l'extensibilité : chaque couche est isolée, testable indépendamment et remplaçable sans casser les autres.",
+          "Code structuré en couches séparées pour garantir la maintenabilité, la testabilité et la facilité d'évolution dans le temps.",
       },
       {
-        title: "Authentification JWT & contrôle d'accès par rôles (RBAC)",
+        title: "Authentification & contrôle d'accès par rôles",
         description:
-          "Sessions sécurisées avec rotation automatique des tokens, contrôle d'accès granulaire par rôle — chaque action est protégée côté serveur via Server Actions Next.js.",
+          "Connexion sécurisée avec gestion des rôles — chaque utilisateur accède uniquement aux données et actions qui lui sont autorisées.",
       },
       {
-        title: "Moteur de calcul interne",
+        title: "Moteur de calcul automatique",
         description:
-          "Mise à jour automatique des valeurs d'investissement et du cumul de cotisations de chaque membre à chaque opération — cohérence des données garantie par transactions Prisma.",
+          "Les totaux, soldes et cumuls de chaque membre sont recalculés et mis à jour automatiquement à chaque opération.",
       },
       {
-        title: "Pipeline CI/CD complet — GitHub Actions",
+        title: "Pipeline CI/CD — déploiement automatisé",
         description:
-          "Pipeline automatisé couvrant tests unitaires, d'intégration, de persistance, E2E et analyse statique (ESLint) — zéro déploiement sans green build.",
+          "Tests automatisés et déploiement continu : chaque mise à jour est vérifiée avant d'être mise en production.",
       },
       {
         title: "Sécurité applicative",
         description:
-          "Headers HTTP durcis (CSP, HSTS, X-Frame-Options), protection contre les injections via Prisma ORM, gestion des sessions et validation stricte des entrées côté serveur.",
+          "Protection des données sensibles du club : accès sécurisés, validation des entrées et défense contre les attaques courantes.",
       },
       {
         title: "Documents automatisés (PDF & exports)",
@@ -91,6 +93,29 @@ export const projects: Project[] = [
     challengeLabel: "Mandat",
     stats: [],
     cover: "/projects/sec/SEC-home-page.jpg",
+    coverBg: "#ffffff",
+    impact: [
+      {
+        value: "~20h",
+        label: "économisées par mois",
+        description: "Suivi des cotisations, génération des reçus et rapports financiers — tout ce qui se faisait manuellement se fait maintenant en quelques clics.",
+      },
+      {
+        value: "1 clic",
+        label: "pour créer et envoyer un reçu",
+        description: "Ce qui prenait 15 minutes dans Word — mise en page, export PDF, envoi par email — est réduit à une seule action.",
+      },
+      {
+        value: "Zéro",
+        label: "erreur de calcul",
+        description: "Les totaux cumulés, soldes et rapports sont calculés et mis à jour automatiquement à chaque opération.",
+      },
+      {
+        value: "100%",
+        label: "centralisé et sécurisé",
+        description: "Tout l'historique financier du club est dans un seul endroit, sécurisé, au lieu d'être éparpillé dans des fichiers Excel.",
+      },
+    ],
     thumbnails: [
       "/projects/sec/SEC-auth.png",
       "/projects/sec/SEC-home-page.jpg",
@@ -141,6 +166,7 @@ export const projects: Project[] = [
       { value: "JWT", label: "Authentification sécurisée" },
     ],
     cover: "/projects/book-host.jpg",
+    coverBg: "#ffffff",
     thumbnails: ["/projects/book-host.jpg"],
   },
   {
@@ -206,14 +232,6 @@ export const experienceTypeLabel = (t: Experience["type"]) => TYPE_LABELS[t];
 
 export const experiences: Experience[] = [
   {
-    title: "Baccalauréat en génie logiciel",
-    organization: "Université Laval",
-    period: "2023 — 2027 (en cours)",
-    description:
-      "Formation approfondie en génie logiciel couvrant la sécurité informatique, la gestion de projets, l'interface homme-machine et la programmation avancée.",
-    type: "academic",
-  },
-  {
     title: "Développement Full-Stack — Force du Nombre S.E.C.",
     organization: "Mandat freelance",
     period: "Avril 2026",
@@ -238,12 +256,20 @@ export const experiences: Experience[] = [
     type: "academic",
   },
   {
-    title: "Développement Web — Application de gestion",
+    title: "Développement Web — Application de gestion de cabinet",
     organization: "Université Laval — Modèles et langages des bases de données",
     period: "Hiver 2025",
     description:
-      "Application web Flask/MySQL pour automatiser la gestion d'un cabinet de conseil : hachage bcrypt, prévention injections SQL, sessions sécurisées, base de données relationnelle avec procédures stockées et triggers.",
+      "Application web Flask/MySQL multi-rôles (admin, conseiller, client) pour la gestion complète d'un cabinet de conseil financier : CRUD clients et contrats, tableau de bord avec statistiques, authentification sécurisée (bcrypt, sessions Flask), prévention des injections SQL, base de données relationnelle avec procédures stockées et triggers.",
     type: "academic",
+  },
+  {
+    title: "Formation en apprentissage automatique",
+    organization: "Université Laval — Plateforme PAX",
+    period: "2025",
+    description:
+      "Préparation et nettoyage des données, régression, classification, traitement de données textuelles (ML & deep learning), traitement et analyse d'images, extraction et génération de contenu.",
+    type: "certification",
   },
   {
     title: "Développement logiciel — Logiciel de gestion électorale",
@@ -254,11 +280,19 @@ export const experiences: Experience[] = [
     type: "academic",
   },
   {
-    title: "Formation en apprentissage automatique",
-    organization: "Université Laval — Plateforme PAX",
-    period: "2025",
+    title: "Baccalauréat en génie logiciel",
+    organization: "Université Laval",
+    period: "2023 — 2027 (en cours)",
     description:
-      "Préparation et nettoyage des données, régression, classification, traitement de données textuelles (ML & deep learning), traitement et analyse d'images, extraction et génération de contenu.",
+      "Formation axée sur le développement backend et frontend, la conception de systèmes, les processus de génie logiciel (Agile, CI/CD), la sécurité applicative et la gestion de projets en équipe.",
+    type: "academic",
+  },
+  {
+    title: "Formation en développement web",
+    organization: "KidLancers Academy",
+    period: "2020",
+    description:
+      "Apprentissage du développement web et de la conception de sites web par projets concrets",
     type: "certification",
   },
 ];
@@ -311,5 +345,73 @@ export const services: Service[] = [
     description:
       "Sécurisation des applications web : authentification, protection des données, analyse de vulnérabilités et durcissement des headers HTTP.",
     tools: ["JWT", "bcrypt", "RBAC", "Snyk", "Dependabot", "Headers HTTP"],
+  },
+];
+
+// Secteurs d'intervention — basés sur les projets réels
+export interface Sector {
+  title: string;
+  description: string;
+}
+
+export const sectors: Sector[] = [
+  {
+    title: "Finance & Gestion",
+    description:
+      "Développement de plateformes de gestion financière et administrative — suivi des investissements, comptabilité, gestion des membres et génération de documents.",
+  },
+  {
+    title: "Commerce en ligne",
+    description:
+      "Conception de boutiques et plateformes e-commerce : catalogue produits, système de commande, gestion des comptes utilisateurs et expérience d'achat fluide.",
+  },
+  {
+    title: "IA & Analyse documentaire",
+    description:
+      "Intégration de modèles d'intelligence artificielle dans des applications web — analyse de documents, extraction d'information et interfaces conversationnelles.",
+  },
+  {
+    title: "Formation & Accompagnement",
+    description:
+      "Développement de plateformes LMS sur mesure — gestion des parcours de formation, suivi de progression, dépôt de livrables, paiements en ligne et espace tuteur.",
+  },
+];
+
+// Services orientés client — ce que je propose / valeur livrée
+export interface Offer {
+  title: string;
+  description: string;
+}
+
+export const offers: Offer[] = [
+  {
+    title: "Sites web pour PME, startups & entrepreneurs",
+    description:
+      "Un site professionnel, moderne et performant qui reflète votre image, renforce votre crédibilité et convertit vos visiteurs en clients.",
+  },
+  {
+    title: "Applications web sur mesure",
+    description:
+      "Des solutions web conçues précisément pour vos besoins métier — outils de gestion, plateformes internes ou interfaces clients, développées de A à Z.",
+  },
+  {
+    title: "Conseil & analyse de besoin",
+    description:
+      "J'analyse votre contexte, je clarifie le besoin réel avec vous et je propose la solution la plus adaptée, fiable et durable à votre situation.",
+  },
+  {
+    title: "Automatisation des processus",
+    description:
+      "Je transforme vos opérations manuelles en flux automatisés, fiables et traçables — pour gagner en efficacité et réduire les risques d'erreur.",
+  },
+  {
+    title: "Déploiement & mise en production",
+    description:
+      "Mise en ligne, hébergement et intégration continue : votre solution en production, sécurisée, performante et accessible à vos utilisateurs.",
+  },
+  {
+    title: "Maintenance & évolution",
+    description:
+      "Un accompagnement continu après la livraison — corrections, améliorations et évolutions pour que votre solution reste performante dans le temps.",
   },
 ];

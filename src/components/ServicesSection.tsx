@@ -46,7 +46,7 @@ const ICONS = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="border-t border-[var(--line)] relative overflow-hidden">
+    <section id="competences" className="border-t border-[var(--line)] relative overflow-hidden">
       {/* Image ambiante droite */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <Image
@@ -54,9 +54,10 @@ export function ServicesSection() {
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-100"
+          className="object-cover object-center opacity-[0.53]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,transparent_40%,var(--background)_100%)]" />
+        
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,transparent_40%,transparent_85%,var(--background)_100%)]" />
       </div>
 
@@ -67,13 +68,14 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: EASE }}
-          className="mb-14"
+          className="mb-14 text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-light tracking-tight text-white">
+          <p className="kicker mb-5" style={{ color: "var(--brand-blue)" }}>Expertise technique</p>
+          <h2 className="text-4xl md:text-6xl font-light tracking-tight text-white mb-6">
             Compétences
           </h2>
-          <p className="mt-3 text-sm text-[var(--muted-strong)] max-w-lg">
-            Du prototype au produit déployé — conception, développement, tests et mise en production.
+          <p className="text-[var(--muted-strong)] max-w-xl mx-auto text-sm leading-relaxed">
+            Les technologies et savoir-faire derrière chaque projet — du prototype au produit déployé.
           </p>
         </motion.div>
 

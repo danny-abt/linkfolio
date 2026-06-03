@@ -12,10 +12,12 @@ export function ProjectCarousel({
   mainSrc,
   mainLabel,
   thumbnails,
+  bgColor,
 }: {
   mainSrc?: string;
   mainLabel: string;
   thumbnails: Item[];
+  bgColor?: string;
 }) {
   const [active, setActive] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -28,16 +30,18 @@ export function ProjectCarousel({
       {/* Visuel principal */}
       <motion.div
         key={active}
-        initial={{ opacity: 0, scale: 0.98 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ scale: 0.98 }}
+        animate={{ scale: 1 }}
         transition={{ duration: 0.5, ease: EASE }}
-        className="relative overflow-hidden rounded-xl border border-[var(--line)]"
+        className="relative overflow-hidden border border-[var(--line)]"
+        style={bgColor ? { backgroundColor: bgColor } : undefined}
       >
         <MediaSlot
           ratio="wide"
           src={current.src}
           label={current.label}
           alt={current.label}
+          bgColor={bgColor}
         />
       </motion.div>
 
@@ -64,13 +68,14 @@ export function ProjectCarousel({
                   key={i}
                   type="button"
                   onClick={() => setActive(i)}
-                  className={`shrink-0 w-[180px] rounded-md overflow-hidden border transition-all duration-300 ${
+                  style={{ borderRadius: 0, ...(bgColor ? { backgroundColor: bgColor } : {}) }}
+                  className={`shrink-0 w-[180px] overflow-hidden border transition-all duration-300 ${
                     active === i
                       ? "border-white"
                       : "border-[var(--line)] opacity-60 hover:opacity-100"
                   }`}
                 >
-                  <MediaSlot ratio="video" src={t.src} label={t.label} />
+                  <MediaSlot ratio="video" src={t.src} label={t.label} bgColor={bgColor} />
                 </button>
               ))}
             </div>

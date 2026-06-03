@@ -67,14 +67,18 @@ export function HeroSection() {
               {personalInfo.title}
             </motion.p>
 
-            <motion.p
+            <motion.ul
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.25, ease: EASE }}
-              className="mt-6 text-[var(--muted-strong)] leading-relaxed text-lg max-w-md"
+              className="mt-6 text-[var(--muted-strong)] text-base max-w-xl space-y-3 list-disc list-inside"
             >
-              {personalInfo.bio}
-            </motion.p>
+              {personalInfo.bio.split("\n").map((line) => (
+                <li key={line} className="leading-relaxed">
+                  {line.replace(/^— /, "")}
+                </li>
+              ))}
+            </motion.ul>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
