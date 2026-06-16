@@ -38,12 +38,12 @@ export function ExperienceSection({ compact = false }: { compact?: boolean }) {
             Parcours
           </h2>
           <p className="text-[var(--muted-strong)] max-w-xl mx-auto text-sm leading-relaxed">
-            Formation académique, projets professionnels et certifications — du génie logiciel orienté objet à la sécurité applicative.
+            Formation académique, projets professionnels et certifications : du génie logiciel orienté objet à la sécurité applicative.
           </p>
         </motion.div>
 
         <div className="relative">
-          {/* Ligne verticale — bleu identité */}
+          {/* Ligne verticale : bleu identité */}
           <div className="absolute left-3 top-3 bottom-3 w-px bg-[var(--brand-blue-mid)] opacity-[0.53]" />
 
           <ol className="space-y-16 md:space-y-0 md:grid md:grid-cols-[1fr_1.2fr_auto] md:gap-x-10 md:gap-y-16">

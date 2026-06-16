@@ -36,7 +36,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="border-t border-[var(--line)] relative overflow-hidden">
-      {/* Image ambiante droite — identique à Expérience */}
+      {/* Image ambiante droite : identique à Expérience */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <Image
           src="/hero.png"
@@ -53,7 +53,7 @@ export function ContactSection() {
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-12 py-32 md:py-48">
         <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
 
-          {/* Colonne gauche — infos */}
+          {/* Colonne gauche : infos */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ export function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Colonne droite — formulaire avec image ambiante */}
+          {/* Colonne droite : formulaire avec image ambiante */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ export function ContactSection() {
                   <input name="name" type="text" required placeholder="Votre nom" className="input-field" />
                 </Field>
                 <Field label="Email">
-                  <input name="email" type="email" required placeholder="votre@email.com" className="input-field" />
+                  <input name="email" type="email" required placeholder="Votre adresse email" className="input-field" />
                 </Field>
               </div>
 
@@ -103,7 +103,7 @@ export function ContactSection() {
 
               {status === "success" && (
                 <p className="mt-6 text-sm text-green-400">
-                  Message envoyé ✓ — je vous réponds sous 48h.
+                  Message envoyé ✓. Je vous réponds sous 48h.
                 </p>
               )}
               {status === "error" && (

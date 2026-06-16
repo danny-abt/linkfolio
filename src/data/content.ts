@@ -40,47 +40,126 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "force-du-nombre-sec",
-    title: "Force du Nombre S.E.C.",
+    slug: "inboxbrief",
+    title: "InboxBrief",
     tagline:
-      "ERP web privé de gestion financière et administrative pour un club d'investissement — mandat freelance.",
+      "SaaS qui connecte votre Gmail, classe vos courriels par IA et envoie un résumé quotidien prêt à lire.",
     description:
-      "Conception et développement complet d'un système remplaçant les processus manuels (Excel) par une plateforme web moderne, sécurisée et maintenable.",
+      "Produit SaaS déployé en production : résumé IA de votre boîte Gmail, abonnement Pro via Stripe, envoi automatisé et application bilingue.",
     features: [
       {
-        title: "Application web full-stack",
+        title: "Résumé intelligent par IA",
         description:
-          "Gestion complète des membres, cotisations et comptabilité du club — interface moderne, base de données relationnelle et API robuste.",
+          "Claude analyse vos courriels, les classe par priorité et envoie un brief clair chaque jour.",
+      },
+      {
+        title: "Connexion Gmail sécurisée",
+        description:
+          "OAuth Google en lecture seule. L'application ne peut jamais modifier ni envoyer de courriel.",
+      },
+      {
+        title: "Envoi automatique programmé",
+        description:
+          "Le digest est envoyé à l'heure choisie (quotidien, jours ouvrés ou désactivé).",
+      },
+      {
+        title: "Abonnement Pro intégré",
+        description:
+          "Paiement, factures et renouvellement directement dans l'application. Apple Pay et Google Pay inclus.",
+      },
+      {
+        title: "Chatbot sur vos résumés",
+        description:
+          "Posez des questions sur le contenu de chaque digest via un assistant conversationnel.",
       },
       {
         title: "Architecture en couches",
         description:
-          "Code structuré en couches séparées pour garantir la maintenabilité, la testabilité et la facilité d'évolution dans le temps.",
+          "Code structuré, testable et évolutif. Chaque service externe est isolé derrière une interface.",
       },
       {
-        title: "Authentification & contrôle d'accès par rôles",
+        title: "Données chiffrées",
         description:
-          "Connexion sécurisée avec gestion des rôles — chaque utilisateur accède uniquement aux données et actions qui lui sont autorisées.",
+          "Courriels, résumés et conversations chiffrés au repos en base de données.",
       },
       {
-        title: "Moteur de calcul automatique",
+        title: "Bilingue FR / EN",
         description:
-          "Les totaux, soldes et cumuls de chaque membre sont recalculés et mis à jour automatiquement à chaque opération.",
+          "Interface et emails en français et anglais, avec SEO intégré.",
+      },
+    ],
+    role: "Développeur Full Stack (produit SaaS)",
+    duration: "Juin 2026",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Claude (Anthropic)",
+      "Supabase / PostgreSQL",
+      "Stripe",
+      "Clerk",
+      "Inngest",
+      "Resend",
+      "Tailwind CSS",
+    ],
+    live: "https://inboxbriefs.com",
+    github: "",
+    challenge:
+      "Transformer une boîte de réception surchargée en un résumé quotidien fiable, tout en bâtissant un produit SaaS complet avec paiement, tâches planifiées et sécurité des données.",
+    challengeLabel: "Produit SaaS",
+    stats: [
+      { value: "Live", label: "Déployé en production sur inboxbriefs.com" },
+      { value: "3 priorités", label: "Classement IA : urgent / important / info" },
+      { value: "FR / EN", label: "Application et emails entièrement bilingues" },
+    ],
+    cover: "/projects/inboxbrief/accueil.png",
+    coverBg: "#1a1a1a",
+    thumbnails: [
+      "/projects/inboxbrief/accueil.png",
+      "/projects/inboxbrief/dashboard.png",
+    ],
+  },
+  {
+    slug: "force-du-nombre-sec",
+    title: "Force du Nombre S.E.C.",
+    tagline:
+      "ERP web de gestion financière pour un club d'investissement, mandat freelance.",
+    description:
+      "Remplacement d'un système Excel manuel par une plateforme web complète, sécurisée et maintenable.",
+    features: [
+      {
+        title: "Gestion des membres et cotisations",
+        description:
+          "Suivi complet des membres, cotisations et comptabilité du club.",
       },
       {
-        title: "Pipeline CI/CD — déploiement automatisé",
+        title: "Architecture en couches",
         description:
-          "Tests automatisés et déploiement continu : chaque mise à jour est vérifiée avant d'être mise en production.",
+          "Code structuré pour garantir la maintenabilité et la testabilité.",
+      },
+      {
+        title: "Authentification & rôles",
+        description:
+          "Chaque utilisateur accède uniquement à ce qui lui est autorisé.",
+      },
+      {
+        title: "Calculs automatiques",
+        description:
+          "Totaux, soldes et cumuls mis à jour automatiquement à chaque opération.",
+      },
+      {
+        title: "CI/CD & tests automatisés",
+        description:
+          "Chaque mise à jour est vérifiée et déployée automatiquement.",
       },
       {
         title: "Sécurité applicative",
         description:
-          "Protection des données sensibles du club : accès sécurisés, validation des entrées et défense contre les attaques courantes.",
+          "Accès sécurisés, validation des données et protection contre les attaques courantes.",
       },
       {
-        title: "Documents automatisés (PDF & exports)",
+        title: "Documents automatisés",
         description:
-          "Génération automatique de reçus PDF individuels et de rapports financiers exportables — remplace la création manuelle document par document.",
+          "Reçus PDF et rapports financiers générés en un clic.",
       },
     ],
     role: "Développeur Full Stack (Freelance)",
@@ -89,7 +168,7 @@ export const projects: Project[] = [
     live: "",
     github: "",
     challenge:
-      "Remplacer un système Excel manuel par une plateforme web moderne, sécurisée et maintenable, sans perte de données ni rupture pour les utilisateurs existants.",
+      "Remplacer un système Excel manuel par une plateforme web sans perte de données ni rupture pour les utilisateurs.",
     challengeLabel: "Mandat",
     stats: [],
     cover: "/projects/sec/SEC-home-page.jpg",
@@ -98,22 +177,22 @@ export const projects: Project[] = [
       {
         value: "~20h",
         label: "économisées par mois",
-        description: "Suivi des cotisations, génération des reçus et rapports financiers — tout ce qui se faisait manuellement se fait maintenant en quelques clics.",
+        description: "Cotisations, reçus et rapports : tout se fait en quelques clics.",
       },
       {
         value: "1 clic",
         label: "pour créer et envoyer un reçu",
-        description: "Ce qui prenait 15 minutes dans Word — mise en page, export PDF, envoi par email — est réduit à une seule action.",
+        description: "Ce qui prenait 15 minutes dans Word est réduit à une seule action.",
       },
       {
         value: "Zéro",
         label: "erreur de calcul",
-        description: "Les totaux cumulés, soldes et rapports sont calculés et mis à jour automatiquement à chaque opération.",
+        description: "Totaux, soldes et rapports calculés automatiquement à chaque opération.",
       },
       {
         value: "100%",
         label: "centralisé et sécurisé",
-        description: "Tout l'historique financier du club est dans un seul endroit, sécurisé, au lieu d'être éparpillé dans des fichiers Excel.",
+        description: "Tout l'historique financier dans un seul endroit, au lieu de fichiers Excel éparpillés.",
       },
     ],
     thumbnails: [
@@ -127,29 +206,29 @@ export const projects: Project[] = [
     slug: "precommande-livres",
     title: "Précommande Livres",
     tagline:
-      "Plateforme e-commerce de précommande de livres — découvrez les titres à paraître et réservez avant leur sortie.",
+      "Boutique e-commerce de précommande de livres avant leur sortie.",
     description:
-      "Conception et développement d'une boutique en ligne spécialisée dans la précommande de livres, avec catalogue par catégories, gestion des comptes utilisateurs et système de panier.",
+      "Catalogue par catégories, système de précommande, comptes utilisateurs et design inspiré de l'univers du livre.",
     features: [
       {
-        title: "Catalogue et navigation par catégories",
+        title: "Catalogue par catégories",
         description:
-          "Parcours des titres à paraître organisés par catégories avec filtres dynamiques — expérience de navigation fluide et intuitive.",
+          "Titres à paraître organisés avec filtres dynamiques.",
       },
       {
         title: "Système de précommande",
         description:
-          "Flux de commande complet permettant aux utilisateurs de réserver un livre avant sa date de sortie, avec confirmation et suivi.",
+          "Réservation d'un livre avant sa sortie, avec confirmation et suivi.",
       },
       {
-        title: "Authentification & compte utilisateur",
+        title: "Compte utilisateur",
         description:
-          "Gestion des sessions sécurisées, historique des commandes et préférences utilisateur.",
+          "Sessions sécurisées, historique des commandes et préférences.",
       },
       {
         title: "Design éditorial",
         description:
-          "Interface soignée, typographie sérif et mise en page inspirée du monde de l'édition — expérience cohérente avec l'univers du livre.",
+          "Typographie sérif et mise en page inspirée du monde du livre.",
       },
     ],
     role: "Développeur Full Stack",
@@ -158,7 +237,7 @@ export const projects: Project[] = [
     live: "",
     github: "",
     challenge:
-      "Créer une expérience d'achat en ligne centrée sur la découverte, où l'utilisateur peut facilement trouver, explorer et précommander des livres avant leur parution.",
+      "Créer une expérience d'achat centrée sur la découverte, où l'utilisateur peut explorer et précommander des livres avant leur parution.",
     challengeLabel: null,
     stats: [
       { value: "4", label: "Sections principales (accueil, à paraître, catégories, à propos)" },
@@ -173,24 +252,24 @@ export const projects: Project[] = [
     slug: "docuchat",
     title: "DocuChat",
     tagline:
-      "AI PDF Analyzer — interrogez n'importe quel document en langage naturel via un chatbot IA.",
+      "Posez des questions sur n'importe quel PDF via un chatbot IA.",
     description:
-      "Application web full-stack permettant d'uploader un PDF et de poser des questions sur son contenu via une interface conversationnelle propulsée par Claude Sonnet (Anthropic).",
+      "Uploadez un PDF, posez vos questions en langage naturel. Propulsé par Claude Sonnet (Anthropic).",
     features: [
       {
-        title: "Architecture client/serveur stricte",
+        title: "Traitement côté serveur",
         description:
-          "Extraction du texte PDF traitée côté serveur, appels à l'API Claude Sonnet isolés dans des routes API dédiées — aucune clé secrète exposée côté client.",
+          "Extraction du PDF et appels à l'IA isolés côté serveur. Aucune clé exposée côté client.",
       },
       {
-        title: "Gestion exhaustive des cas d'erreur",
+        title: "Gestion des erreurs",
         description:
-          "Tous les cas d'échec couverts : PDF protégé par mot de passe, scanné sans OCR, corrompu, serveurs surchargés, perte de connexion, dépassement de la limite de taille Vercel — avec messages utilisateur explicites pour chaque cas.",
+          "PDF protégé, corrompu, sans OCR, connexion perdue : chaque cas a un message explicite.",
       },
       {
-        title: "Conversation multi-tours avec historique contextuel",
+        title: "Conversation multi-tours",
         description:
-          "Historique conversationnel maintenu entre les échanges pour des réponses cohérentes, interface drag & drop pour l'upload, déployé sur Vercel.",
+          "Historique maintenu entre les échanges pour des réponses cohérentes. Upload par drag & drop.",
       },
     ],
     role: "Développeur Full Stack",
@@ -199,10 +278,10 @@ export const projects: Project[] = [
     live: "https://docuchat-dea.vercel.app",
     github: "",
     challenge:
-      "Rendre l'interrogation d'un document long aussi simple que poser une question, tout en couvrant rigoureusement les cas d'erreur réels rencontrés en production.",
+      "Rendre l'interrogation d'un document aussi simple que poser une question, en couvrant tous les cas d'erreur réels.",
     challengeLabel: null,
     stats: [
-      { value: "API", label: "Claude Sonnet — Anthropic" },
+      { value: "API", label: "Claude Sonnet (Anthropic)" },
       { value: "6+", label: "Cas d'erreur gérés explicitement" },
       { value: "SSR", label: "Extraction PDF côté serveur" },
     ],
@@ -232,7 +311,7 @@ export const experienceTypeLabel = (t: Experience["type"]) => TYPE_LABELS[t];
 
 export const experiences: Experience[] = [
   {
-    title: "Développement Full-Stack — Force du Nombre S.E.C.",
+    title: "Développement Full-Stack : Force du Nombre S.E.C.",
     organization: "Mandat freelance",
     period: "Avril 2026",
     description:
@@ -240,24 +319,24 @@ export const experiences: Experience[] = [
     type: "professional",
   },
   {
-    title: "Développement Backend — API REST",
-    organization: "Université Laval — Processus du génie logiciel",
+    title: "Développement Backend : API REST",
+    organization: "Université Laval, Processus du génie logiciel",
     period: "Hiver 2026",
     description:
       "API REST pour plateforme de vente anonyme en équipe Agile : architecture en couches, Clean Code, CI/CD GitHub Actions, conteneurisation Docker, déploiement GHCR, analyse de sécurité Snyk/Dependabot. Base de données : MongoDB.",
     type: "academic",
   },
   {
-    title: "Développement logiciel — Logiciel de modélisation",
-    organization: "Université Laval — Génie logiciel orienté objet",
+    title: "Développement logiciel : Logiciel de modélisation",
+    organization: "Université Laval, Génie logiciel orienté objet",
     period: "Automne 2025",
     description:
       "Logiciel Java/Swing de modélisation d'installation de plancher chauffant : architecture MVC, moteur de graphe générant automatiquement un chemin en serpentin valide selon des contraintes physiques réelles.",
     type: "academic",
   },
   {
-    title: "Développement Web — Application de gestion de cabinet",
-    organization: "Université Laval — Modèles et langages des bases de données",
+    title: "Développement Web : Application de gestion de cabinet",
+    organization: "Université Laval, Modèles et langages des bases de données",
     period: "Hiver 2025",
     description:
       "Application web Flask/MySQL multi-rôles (admin, conseiller, client) pour la gestion complète d'un cabinet de conseil financier : CRUD clients et contrats, tableau de bord avec statistiques, authentification sécurisée (bcrypt, sessions Flask), prévention des injections SQL, base de données relationnelle avec procédures stockées et triggers.",
@@ -265,15 +344,15 @@ export const experiences: Experience[] = [
   },
   {
     title: "Formation en apprentissage automatique",
-    organization: "Université Laval — Plateforme PAX",
+    organization: "Université Laval, Plateforme PAX",
     period: "2025",
     description:
       "Préparation et nettoyage des données, régression, classification, traitement de données textuelles (ML & deep learning), traitement et analyse d'images, extraction et génération de contenu.",
     type: "certification",
   },
   {
-    title: "Développement logiciel — Logiciel de gestion électorale",
-    organization: "Université Laval — Programmation avancée C++",
+    title: "Développement logiciel : Logiciel de gestion électorale",
+    organization: "Université Laval, Programmation avancée C++",
     period: "Hiver 2024",
     description:
       "Logiciel de gestion électorale en C++ avec interface graphique (UI).",
@@ -282,7 +361,7 @@ export const experiences: Experience[] = [
   {
     title: "Baccalauréat en génie logiciel",
     organization: "Université Laval",
-    period: "2023 — 2027 (en cours)",
+    period: "2023 à 2027 (en cours)",
     description:
       "Formation axée sur le développement backend et frontend, la conception de systèmes, les processus de génie logiciel (Agile, CI/CD), la sécurité applicative et la gestion de projets en équipe.",
     type: "academic",
@@ -312,43 +391,37 @@ export interface Service {
 export const services: Service[] = [
   {
     title: "Développement Full-Stack",
-    description:
-      "Conception et développement d'applications web complètes — interfaces réactives, API robustes, base de données, déploiement. Du wireframe au produit en production.",
-    tools: ["Next.js", "React", "TypeScript", "Node.js", "Prisma ORM", "PostgreSQL", "Tailwind CSS", "Framer Motion"],
+    description: "Du front au back, du design au déploiement.",
+    tools: ["Next.js", "React", "Vue.js", "Angular", "TypeScript", "JavaScript", "Tailwind CSS"],
   },
   {
-    title: "Back-End & API",
-    description:
-      "Architecture en couches, API REST robustes, authentification sécurisée (JWT, RBAC), gestion des sessions et validation côté serveur.",
-    tools: ["Node.js", "Express", "Prisma ORM", "PostgreSQL", "MySQL", "MongoDB"],
+    title: "IA & Automatisation",
+    description: "Chatbots, intégration d'IA et automatisation de tâches répétitives.",
+    tools: ["Claude (Anthropic)", "OpenAI", "LangChain", "Python", "API REST", "Webhooks", "n8n"],
   },
   {
     title: "CI/CD & DevOps",
-    description:
-      "Pipeline d'intégration et de déploiement continu couvrant tests automatisés, analyse statique, conteneurisation et déploiement cloud.",
-    tools: ["GitHub Actions", "Docker", "Vercel", "Azure", "Google Cloud", "Neon", "Supabase"],
+    description: "Tests automatisés, conteneurisation et déploiement continu.",
+    tools: ["GitHub Actions", "Docker", "Git", "Vercel", "Google Cloud", "Azure"],
   },
   {
-    title: "Développement logiciel",
-    description:
-      "Clean code, architecture solide (MVC, couches), tests automatisés, documentation technique et revue de code.",
-    tools: ["Python", "Java", "C/C++", "Swing", "JUnit", "Flask", "TDD", "ESLint"],
+    title: "Développement logiciel & POO",
+    description: "Architecture propre, orientée objet, dans plusieurs langages.",
+    tools: ["Python", "Java", "C/C++", "C#", "Rust", "PHP", "Qt", "Swing", "UML", "NumPy", "Scikit-learn"],
   },
   {
-    title: "Programmation orientée objet",
-    description:
-      "Conception orientée objet, design patterns, architecture MVC, modélisation et développement de logiciels robustes et maintenables.",
-    tools: ["Java", "C/C++", "Python", "Swing", "JUnit", "UML"],
+    title: "Tests & Qualité",
+    description: "Tests unitaires, intégration et E2E pour du code fiable.",
+    tools: ["JUnit", "Google Test", "TDD", "Tests E2E", "Tests d'intégration", "ESLint", "Lint"],
   },
   {
     title: "Sécurité applicative",
-    description:
-      "Sécurisation des applications web : authentification, protection des données, analyse de vulnérabilités et durcissement des headers HTTP.",
+    description: "Authentification, protection des données et analyse de vulnérabilités.",
     tools: ["JWT", "bcrypt", "RBAC", "Snyk", "Dependabot", "Headers HTTP"],
   },
 ];
 
-// Secteurs d'intervention — basés sur les projets réels
+// Secteurs d'intervention, basés sur les projets réels
 export interface Sector {
   title: string;
   description: string;
@@ -358,60 +431,73 @@ export const sectors: Sector[] = [
   {
     title: "Finance & Gestion",
     description:
-      "Développement de plateformes de gestion financière et administrative — suivi des investissements, comptabilité, gestion des membres et génération de documents.",
+      "Suivi des membres, cotisations, comptabilité et génération de documents.",
   },
   {
     title: "Commerce en ligne",
     description:
-      "Conception de boutiques et plateformes e-commerce : catalogue produits, système de commande, gestion des comptes utilisateurs et expérience d'achat fluide.",
-  },
-  {
-    title: "IA & Analyse documentaire",
-    description:
-      "Intégration de modèles d'intelligence artificielle dans des applications web — analyse de documents, extraction d'information et interfaces conversationnelles.",
+      "Boutiques et plateformes e-commerce avec catalogue, commandes et comptes clients.",
   },
   {
     title: "Formation & Accompagnement",
     description:
-      "Développement de plateformes LMS sur mesure — gestion des parcours de formation, suivi de progression, dépôt de livrables, paiements en ligne et espace tuteur.",
+      "Plateformes LMS avec parcours, suivi de progression et espace tuteur.",
   },
 ];
 
-// Services orientés client — ce que je propose / valeur livrée
+// Services orientés client, ce que je propose / valeur livrée
 export interface Offer {
   title: string;
-  description: string;
+  bullets: string[];
 }
 
 export const offers: Offer[] = [
   {
-    title: "Sites web pour PME, startups & entrepreneurs",
-    description:
-      "Un site professionnel, moderne et performant qui reflète votre image, renforce votre crédibilité et convertit vos visiteurs en clients.",
+    title: "Développement logiciel",
+    bullets: [
+      "Applications web, desktop et mobile",
+      "Code structuré et maintenable",
+      "Livraison complète du projet",
+    ],
   },
   {
     title: "Applications web sur mesure",
-    description:
-      "Des solutions web conçues précisément pour vos besoins métier — outils de gestion, plateformes internes ou interfaces clients, développées de A à Z.",
+    bullets: [
+      "Portails, tableaux de bord, outils internes",
+      "Construit selon votre fonctionnement",
+      "De l'idée au déploiement",
+    ],
   },
   {
-    title: "Conseil & analyse de besoin",
-    description:
-      "J'analyse votre contexte, je clarifie le besoin réel avec vous et je propose la solution la plus adaptée, fiable et durable à votre situation.",
+    title: "Conseil & cadrage",
+    bullets: [
+      "Compréhension de votre contexte",
+      "Définition du périmètre avant de développer",
+      "Solution adaptée et durable",
+    ],
   },
   {
-    title: "Automatisation des processus",
-    description:
-      "Je transforme vos opérations manuelles en flux automatisés, fiables et traçables — pour gagner en efficacité et réduire les risques d'erreur.",
+    title: "Automatisation & IA",
+    bullets: [
+      "Remplacement des tâches manuelles",
+      "Chatbots et assistants intelligents",
+      "Connexion à des modèles d'IA",
+    ],
   },
   {
-    title: "Déploiement & mise en production",
-    description:
-      "Mise en ligne, hébergement et intégration continue : votre solution en production, sécurisée, performante et accessible à vos utilisateurs.",
+    title: "Déploiement & mise en ligne",
+    bullets: [
+      "Hébergement et configuration",
+      "Déploiement automatisé",
+      "Sécurisé et prêt à l'emploi",
+    ],
   },
   {
-    title: "Maintenance & évolution",
-    description:
-      "Un accompagnement continu après la livraison — corrections, améliorations et évolutions pour que votre solution reste performante dans le temps.",
+    title: "Maintenance & suivi",
+    bullets: [
+      "Corrections après livraison",
+      "Ajout de fonctionnalités",
+      "Accompagnement continu",
+    ],
   },
 ];

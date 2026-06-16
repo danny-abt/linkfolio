@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Danny Emmanuel Aboutou | Software Engineer",
   description:
-    "Portfolio de Danny Emmanuel Aboutou — étudiant en génie logiciel à l'Université Laval. Projets, expériences et contact.",
+    "Portfolio de Danny Emmanuel Aboutou, étudiant en génie logiciel à l'Université Laval. Projets, expériences et contact.",
   keywords: [
     "Danny Emmanuel Aboutou",
     "software engineer",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Danny Emmanuel Aboutou | Software Engineer",
     description:
-      "Portfolio de Danny Emmanuel Aboutou — étudiant en génie logiciel à l'Université Laval.",
+      "Portfolio de Danny Emmanuel Aboutou, étudiant en génie logiciel à l'Université Laval.",
     type: "website",
     locale: "fr_CA",
   },

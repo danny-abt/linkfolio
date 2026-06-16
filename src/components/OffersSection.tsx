@@ -17,11 +17,10 @@ const ICONS = [
     <rect x="3" y="3" width="18" height="18" rx="2" />
     <path d="M3 9h18M9 21V9" />
   </svg>,
-  // Conseil & analyse (loupe)
+  // Conseil (loupe)
   <svg key="2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="11" cy="11" r="7" />
-    <path d="m20 20-3.5-3.5" />
-    <path d="M8 11h6M11 8v6" />
+    <path d="m20 20-3.5-3.5M8 11h6M11 8v6" />
   </svg>,
   // Automatisation (engrenage)
   <svg key="3" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -71,7 +70,7 @@ export function OffersSection() {
             Services
           </h2>
           <p className="text-[var(--muted-strong)] max-w-xl mx-auto text-sm leading-relaxed">
-            Ce que je fais pour vous — de l&apos;analyse du besoin à la mise en production.
+            Ce que je fais pour vous : de l&apos;analyse du besoin à la mise en production.
           </p>
         </motion.div>
 
@@ -98,10 +97,15 @@ export function OffersSection() {
                 {offer.title}
               </h3>
 
-              {/* Description */}
-              <p className="text-sm text-[var(--muted-strong)] leading-relaxed">
-                {offer.description}
-              </p>
+              {/* Bullets */}
+              <ul className="space-y-2">
+                {offer.bullets.map((bullet) => (
+                  <li key={bullet} className="flex items-start gap-2 text-sm text-[var(--muted-strong)]">
+                    <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: "var(--brand-blue)" }} />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

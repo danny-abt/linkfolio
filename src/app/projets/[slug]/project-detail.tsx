@@ -50,7 +50,7 @@ export function ProjectDetail({ project }: { project: Project }) {
       </motion.div>
 
       <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-16 items-start">
-        {/* Colonne gauche — contenu */}
+        {/* Colonne gauche : contenu */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,6 +67,32 @@ export function ProjectDetail({ project }: { project: Project }) {
 
           {/* Séparateur */}
           <div className="my-10 h-px bg-[var(--line)]" />
+
+          {/* Boutons */}
+          <div className="mb-10 flex flex-wrap items-center gap-3">
+            {project.live && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Voir le site
+                <ArrowUpRight />
+              </a>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                Voir le code
+                <GithubIcon />
+              </a>
+            )}
+          </div>
 
           {/* Features */}
           <ul className="space-y-7">
@@ -92,32 +118,6 @@ export function ProjectDetail({ project }: { project: Project }) {
             ))}
           </ul>
 
-          {/* Boutons */}
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                Voir le site
-                <ArrowUpRight />
-              </a>
-            )}
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
-                Voir le code
-                <GithubIcon />
-              </a>
-            )}
-          </div>
-
           {/* Méta */}
           <div className="mt-16 pt-12 border-t border-[var(--line)] grid grid-cols-3 divide-x divide-[var(--line)] text-sm">
             <div className="pr-8">
@@ -142,7 +142,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           </div>
         </motion.div>
 
-        {/* Colonne droite — médias + stats */}
+        {/* Colonne droite : médias + stats */}
         <motion.div
           initial={{ y: 24 }}
           animate={{ y: 0 }}
@@ -157,7 +157,7 @@ export function ProjectDetail({ project }: { project: Project }) {
             
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background)_0%,var(--background)_30%,transparent_50%,transparent_85%,var(--background)_100%)]" />
           </div>
-          {/* Stats / Défi — masqué si challengeLabel === null */}
+          {/* Stats / Défi : masqué si challengeLabel === null */}
           {project.challengeLabel !== null && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}

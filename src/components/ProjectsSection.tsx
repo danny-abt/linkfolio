@@ -37,7 +37,7 @@ export function ProjectsSection() {
             Projets récents
           </h2>
           <p className="text-[var(--muted-strong)] max-w-xl mx-auto text-sm leading-relaxed">
-            Projets professionnels et personnels — du mandat freelance au projet académique.
+            Projets professionnels et personnels.
           </p>
         </motion.div>
 

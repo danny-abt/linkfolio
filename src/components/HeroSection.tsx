@@ -23,9 +23,9 @@ export function HeroSection() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Dégradé gauche — très large */}
+        {/* Dégradé gauche : très large */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,var(--background)_35%,rgba(10,10,10,0.8)_52%,rgba(10,10,10,0.2)_68%,transparent_82%)]" />
-        {/* Dégradé bas — très large */}
+        {/* Dégradé bas : très large */}
         <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--background)_0%,var(--background)_22%,rgba(10,10,10,0.8)_38%,rgba(10,10,10,0.3)_52%,transparent_68%)]" />
         {/* Dégradé droite */}
         <div className="absolute inset-0 bg-[linear-gradient(to_left,var(--background)_0%,rgba(10,10,10,0.7)_8%,transparent_28%)]" />
@@ -35,7 +35,7 @@ export function HeroSection() {
 
       {/* Contenu */}
       <div className="relative z-10 flex-1 grid lg:grid-cols-[55fr_45fr]">
-        {/* Colonne gauche — texte */}
+        {/* Colonne gauche : texte */}
         <div className="flex items-center px-6 md:px-12 py-24 md:py-32">
           <div className="w-full">
             <motion.p
@@ -75,7 +75,7 @@ export function HeroSection() {
             >
               {personalInfo.bio.split("\n").map((line) => (
                 <li key={line} className="leading-relaxed">
-                  {line.replace(/^— /, "")}
+                  {line}
                 </li>
               ))}
             </motion.ul>
@@ -98,7 +98,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Colonne droite — vide, l'image est en fond */}
+        {/* Colonne droite : vide, l'image est en fond */}
         <div className="hidden lg:block" />
       </div>
 

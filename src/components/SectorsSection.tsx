@@ -64,7 +64,7 @@ export function SectorsSection() {
           </p>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-3">
           {sectors.map((sector, i) => (
             <motion.div
               key={sector.title}

@@ -13,11 +13,11 @@ const ICONS = [
     <path d="M8 21h8M12 17v4" />
     <path d="m9 8 3 3-3 3M13 14h3" />
   </svg>,
-  // Back-End
+  // IA & Automatisation (sparkles)
   <svg key="1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <ellipse cx="12" cy="5" rx="9" ry="3" />
-    <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
-    <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3" />
+    <path d="M12 3v1M12 20v1M4.22 4.22l.7.7M19.07 19.07l.71.71M3 12h1M20 12h1M4.93 19.07l-.71.71M19.78 4.93l-.71-.71" />
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 8v1M12 15v1M8 12h1M15 12h1" />
   </svg>,
   // CI/CD
   <svg key="2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -30,12 +30,10 @@ const ICONS = [
     <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
     <path d="M14 2v6h6M9 13l2 2-2 2M13 17h2" />
   </svg>,
-  // POO
+  // Tests & Qualité : checkmark
   <svg key="4" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="8" height="6" rx="1" />
-    <rect x="14" y="2" width="8" height="6" rx="1" />
-    <rect x="8" y="16" width="8" height="6" rx="1" />
-    <path d="M6 8v3M18 8v3M6 11h12M12 11v5" />
+    <path d="M9 11l3 3L22 4" />
+    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
   </svg>,
   // Sécurité
   <svg key="5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -75,7 +73,7 @@ export function ServicesSection() {
             Compétences
           </h2>
           <p className="text-[var(--muted-strong)] max-w-xl mx-auto text-sm leading-relaxed">
-            Les technologies et savoir-faire derrière chaque projet — du prototype au produit déployé.
+            Les technologies et savoir-faire derrière chaque projet : du prototype au produit déployé.
           </p>
         </motion.div>
 
@@ -87,11 +85,11 @@ export function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.55, delay: i * 0.07, ease: EASE }}
-              className="group bg-[var(--background)] p-8 hover:bg-[var(--surface-hover)] transition-colors duration-300"
+              className="bg-[var(--background)] p-8"
             >
               {/* Icône */}
               <div
-                className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--line-strong)] transition-colors duration-300 group-hover:border-[var(--brand-blue-mid)]"
+                className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--line-strong)]"
                 style={{ color: "var(--brand-blue)" }}
               >
                 {ICONS[i]}
